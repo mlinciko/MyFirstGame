@@ -37,10 +37,10 @@ public:
 	{
 		switch (dir)
 		{
-		case 0: dx = speed; dy = 0; break;//идем вправо
-		case 1: dx = -speed; dy = 0; break;//идем влево
-		case 2: dx = 0; dy = speed; break;//идем вниз
-		case 3: dx = 0; dy = -speed; break;//идем наверх
+		case 0: dx = speed; dy = 0; break;//РёРґРµРј РІРїСЂР°РІРѕ
+		case 1: dx = -speed; dy = 0; break;//РёРґРµРј РІР»РµРІРѕ
+		case 2: dx = 0; dy = speed; break;//РёРґРµРј РІРЅРёР·
+		case 3: dx = 0; dy = -speed; break;//РёРґРµРј РЅР°РІРµСЂС…
 		}
 
 		x += dx * time;
@@ -68,37 +68,37 @@ public:
 			for (int j = x / 32; j < (x + w) / 32; j++)
 			{
 				if (TileMap[i][j] == '1' || TileMap[i][j] == '2'|| TileMap[i][j] == '3' || TileMap[i][j] == '4' || TileMap[i][j] == '5' || TileMap[i][j] == '6' || TileMap[i][j] == '7' || TileMap[i][j] == 'a' || TileMap[i][j] == 'b' || TileMap[i][j] == 'c' || TileMap[i][j] == 'd' || TileMap[i][j] == 'e' || TileMap[i][j] == 'f' || TileMap[i][j] == 'k' || TileMap[i][j] == 'l') {
-					if (dy > 0)//если мы шли вниз,
+					if (dy > 0)//РµСЃР»Рё РјС‹ С€Р»Рё РІРЅРёР·,
 					{
-						y = i * 32 - h;//то стопорим координату игрек персонажа. сначала получаем координату нашего квадратика на карте(стены) и затем вычитаем из высоты спрайта персонажа.
+						y = i * 32 - h;//С‚Рѕ СЃС‚РѕРїРѕСЂРёРј РєРѕРѕСЂРґРёРЅР°С‚Сѓ РёРіСЂРµРє РїРµСЂСЃРѕРЅР°Р¶Р°. СЃРЅР°С‡Р°Р»Р° РїРѕР»СѓС‡Р°РµРј РєРѕРѕСЂРґРёРЅР°С‚Сѓ РЅР°С€РµРіРѕ РєРІР°РґСЂР°С‚РёРєР° РЅР° РєР°СЂС‚Рµ(СЃС‚РµРЅС‹) Рё Р·Р°С‚РµРј РІС‹С‡РёС‚Р°РµРј РёР· РІС‹СЃРѕС‚С‹ СЃРїСЂР°Р№С‚Р° РїРµСЂСЃРѕРЅР°Р¶Р°.
 					}
 					if (dy < 0)
 					{
-						y = i * 32 + 32;//аналогично с ходьбой вверх. dy<0, значит мы идем вверх 
+						y = i * 32 + 32;//Р°РЅР°Р»РѕРіРёС‡РЅРѕ СЃ С…РѕРґСЊР±РѕР№ РІРІРµСЂС…. dy<0, Р·РЅР°С‡РёС‚ РјС‹ РёРґРµРј РІРІРµСЂС… 
 					}
 					if (dx > 0)
 					{
-						x = j * 32 - w;//если идем вправо, то координата Х равна стена (символ 0) минус ширина персонажа
+						x = j * 32 - w;//РµСЃР»Рё РёРґРµРј РІРїСЂР°РІРѕ, С‚Рѕ РєРѕРѕСЂРґРёРЅР°С‚Р° РҐ СЂР°РІРЅР° СЃС‚РµРЅР° (СЃРёРјРІРѕР» 0) РјРёРЅСѓСЃ С€РёСЂРёРЅР° РїРµСЂСЃРѕРЅР°Р¶Р°
 					}
 					if (dx < 0)
 					{
-						x = j * 32 + 32;//аналогично идем влево
+						x = j * 32 + 32;//Р°РЅР°Р»РѕРіРёС‡РЅРѕ РёРґРµРј РІР»РµРІРѕ
 					}
 				}
-				if (TileMap[i][j] == '0') { //если символ равен '0' (морковка)
-					TileMap[i][j] = ' ';//убираем морковку, типа взяли бонус. 
+				if (TileMap[i][j] == '0') { //РµСЃР»Рё СЃРёРјРІРѕР» СЂР°РІРµРЅ '0' (РјРѕСЂРєРѕРІРєР°)
+					TileMap[i][j] = ' ';//СѓР±РёСЂР°РµРј РјРѕСЂРєРѕРІРєСѓ, С‚РёРїР° РІР·СЏР»Рё Р±РѕРЅСѓСЃ.  
 					playerScore += 10;
 				}
-				if (TileMap[i][j] == '8') {//телепортация на(x,y)
+				if (TileMap[i][j] == '8') {//С‚РµР»РµРїРѕСЂС‚Р°С†РёСЏ РЅР°(x,y)
 					x = 92; y = 1088;
 				}
 				if (TileMap[i][j] == 'm') {
 					x = 352; y = 32;
 				}
-				if (TileMap[i][j] == 'q') {//если персонаж заходит на выход переменная = true
+				if (TileMap[i][j] == 'q') {//РµСЃР»Рё РїРµСЂСЃРѕРЅР°Р¶ Р·Р°С…РѕРґРёС‚ РЅР° РІС‹С…РѕРґ РїРµСЂРµРјРµРЅРЅР°СЏ = true
 					win = true;
 				}
-				if (TileMap[i][j] == 'r') {//если персонаж собирает гриб, здоровье уменьшается на 10
+				if (TileMap[i][j] == 'r') {//РµСЃР»Рё РїРµСЂСЃРѕРЅР°Р¶ СЃРѕР±РёСЂР°РµС‚ РіСЂРёР±, Р·РґРѕСЂРѕРІСЊРµ СѓРјРµРЅСЊС€Р°РµС‚СЃСЏ РЅР° 10
 					TileMap[i][j] = ' ';
 					health -= 10;
 				}
@@ -120,36 +120,36 @@ float CurrentFrame = 0;
 
 int main()
 {
-	//редактируем окно
+	//СЂРµРґР°РєС‚РёСЂСѓРµРј РѕРєРЅРѕ
 	window.create(VideoMode(640, 480), "Game");
-	window.setFramerateLimit(60);//кол-во кадров в секунду
+	window.setFramerateLimit(60);//РєРѕР»-РІРѕ РєР°РґСЂРѕРІ РІ СЃРµРєСѓРЅРґСѓ
 	view.reset(sf::FloatRect(0, 0, 640, 480));
 
-	Font font;//шрифт
+	Font font;//С€СЂРёС„С‚
 	font.loadFromFile("BalooBhaijaan-Regular.ttf");
 	Text text1("Score: ", font, 20);
 	text1.setFillColor(sf ::Color::Yellow);
 
-	Text text2("Game over!", font, 60);//текс выводящий GameOver
+	Text text2("Game over!", font, 60);//С‚РµРєСЃ РІС‹РІРѕРґСЏС‰РёР№ GameOver
 	text2.setFillColor(sf::Color::Red);
 
-	Text text3("Score: ", font, 30);//текст выводящий итоговый счет
+	Text text3("Score: ", font, 30);//С‚РµРєСЃС‚ РІС‹РІРѕРґСЏС‰РёР№ РёС‚РѕРіРѕРІС‹Р№ СЃС‡РµС‚
 	text3.setFillColor(sf::Color::Green);
 
-	Text text4("Health: ", font, 20);//текс выводящий здоровье
+	Text text4("Health: ", font, 20);//С‚РµРєСЃ РІС‹РІРѕРґСЏС‰РёР№ Р·РґРѕСЂРѕРІСЊРµ
 	text4.setFillColor(sf::Color::Magenta);
 	
 	Player p("image.png", 32, 32, 40, 80);
 	
 	Clock clock;
 
-	Image map_image;//объект изображения для карты
-	map_image.loadFromFile("map.png");//загружаем файл для карты
-	Texture map;//текстура карты
-	map.loadFromImage(map_image);//заливаем в текстуру картинку
-	Sprite s_map;//создаём спрайт для карты
-	s_map.setTexture(map);//заливаем текстуру спрайтом
-	//пока окно открыто
+	Image map_image;//РѕР±СЉРµРєС‚ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ РґР»СЏ РєР°СЂС‚С‹
+	map_image.loadFromFile("map.png");//Р·Р°РіСЂСѓР¶Р°РµРј С„Р°Р№Р» РґР»СЏ РєР°СЂС‚С‹
+	Texture map;//С‚РµРєСЃС‚СѓСЂР° РєР°СЂС‚С‹
+	map.loadFromImage(map_image);//Р·Р°Р»РёРІР°РµРј РІ С‚РµРєСЃС‚СѓСЂСѓ РєР°СЂС‚РёРЅРєСѓ
+	Sprite s_map;//СЃРѕР·РґР°С‘Рј СЃРїСЂР°Р№С‚ РґР»СЏ РєР°СЂС‚С‹
+	s_map.setTexture(map);//Р·Р°Р»РёРІР°РµРј С‚РµРєСЃС‚СѓСЂСѓ СЃРїСЂР°Р№С‚РѕРј
+	//РїРѕРєР° РѕРєРЅРѕ РѕС‚РєСЂС‹С‚Рѕ
 	while (window.isOpen())
 	{
 		float time = clock.getElapsedTime().asMicroseconds();
@@ -157,9 +157,9 @@ int main()
 		time = time / 800;
 		cout << time << endl;
 		Event event;
-		while (window.pollEvent(event))//проведем события
+		while (window.pollEvent(event))//РїСЂРѕРІРµРґРµРј СЃРѕР±С‹С‚РёСЏ
 		{
-			if (event.type == Event::Closed)//если нажимаем на крестик окно закрывается
+			if (event.type == Event::Closed)//РµСЃР»Рё РЅР°Р¶РёРјР°РµРј РЅР° РєСЂРµСЃС‚РёРє РѕРєРЅРѕ Р·Р°РєСЂС‹РІР°РµС‚СЃСЏ
 				window.close();
 		}
 		
@@ -203,10 +203,10 @@ int main()
 		for (int i = 0; i < HEIGHT_MAP; i++)
 			for (int j = 0; j < WIDTH_MAP; j++)
 			{
-				if (TileMap[i][j] == '0')  s_map.setTextureRect(IntRect(0, 0, 32, 32)); //если встретили символ 0, то рисуем 1й квадратик
-				if (TileMap[i][j] == '1')  s_map.setTextureRect(IntRect(32, 0, 32, 32));//если встретили символ 1, то рисуем 2й квадратик
-				if ((TileMap[i][j] == '2')) s_map.setTextureRect(IntRect(64, 0, 32, 32));//если встретили символ 2, то рисуем 3й квадратик
-				if ((TileMap[i][j] == '3')) s_map.setTextureRect(IntRect(96, 0, 32, 32));//и тд
+				if (TileMap[i][j] == '0')  s_map.setTextureRect(IntRect(0, 0, 32, 32)); //ГҐГ±Г«ГЁ ГўГ±ГІГ°ГҐГІГЁГ«ГЁ Г±ГЁГ¬ГўГ®Г« 0, ГІГ® Г°ГЁГ±ГіГҐГ¬ 1Г© ГЄГўГ Г¤Г°Г ГІГЁГЄ
+				if (TileMap[i][j] == '1')  s_map.setTextureRect(IntRect(32, 0, 32, 32));//ГҐГ±Г«ГЁ ГўГ±ГІГ°ГҐГІГЁГ«ГЁ Г±ГЁГ¬ГўГ®Г« 1, ГІГ® Г°ГЁГ±ГіГҐГ¬ 2Г© ГЄГўГ Г¤Г°Г ГІГЁГЄ
+				if ((TileMap[i][j] == '2')) s_map.setTextureRect(IntRect(64, 0, 32, 32));//ГҐГ±Г«ГЁ ГўГ±ГІГ°ГҐГІГЁГ«ГЁ Г±ГЁГ¬ГўГ®Г« 2, ГІГ® Г°ГЁГ±ГіГҐГ¬ 3Г© ГЄГўГ Г¤Г°Г ГІГЁГЄ
+				if ((TileMap[i][j] == '3')) s_map.setTextureRect(IntRect(96, 0, 32, 32));//ГЁ ГІГ¤
 				if ((TileMap[i][j] == '4')) s_map.setTextureRect(IntRect(128, 0, 32, 32));
 				if ((TileMap[i][j] == '5')) s_map.setTextureRect(IntRect(160, 0, 32, 32));
 				if ((TileMap[i][j] == '6')) s_map.setTextureRect(IntRect(192, 0, 32, 32));
@@ -227,38 +227,38 @@ int main()
 				if ((TileMap[i][j] == 'r')) s_map.setTextureRect(IntRect(672, 0, 32, 32));
 				if ((TileMap[i][j] == 'q')) s_map.setTextureRect(IntRect(704, 0, 32, 32));
 
-				s_map.setPosition(j * 32, i * 32);//по сути раскидывает квадратики, превращая в карту. то есть задает каждому из них позицию. если убрать, то вся карта нарисуется в одном квадрате 32*32 и мы увидим один квадрат
+				s_map.setPosition(j * 32, i * 32);//РїРѕ СЃСѓС‚Рё СЂР°СЃРєРёРґС‹РІР°РµС‚ РєРІР°РґСЂР°С‚РёРєРё, РїСЂРµРІСЂР°С‰Р°СЏ РІ РєР°СЂС‚Сѓ. С‚Рѕ РµСЃС‚СЊ Р·Р°РґР°РµС‚ РєР°Р¶РґРѕРјСѓ РёР· РЅРёС… РїРѕР·РёС†РёСЋ. РµСЃР»Рё СѓР±СЂР°С‚СЊ, С‚Рѕ РІСЃСЏ РєР°СЂС‚Р° РЅР°СЂРёСЃСѓРµС‚СЃСЏ РІ РѕРґРЅРѕРј РєРІР°РґСЂР°С‚Рµ 32*32 Рё РјС‹ СѓРІРёРґРёРј РѕРґРёРЅ РєРІР°РґСЂР°С‚
 
-				window.draw(s_map);//рисуем квадратики на экран
+				window.draw(s_map);//СЂРёСЃСѓРµРј РєРІР°РґСЂР°С‚РёРєРё РЅР° СЌРєСЂР°РЅ
 			}
 		
-		std::ostringstream playerScoreString;    // объявили переменную
-		playerScoreString << p.playerScore;		//занесли в нее число очков, то есть формируем строку
-		text1.setString("Score: " + playerScoreString.str());//задаем строку тексту и вызываем сформированную выше строку методом .str() 
-		text1.setPosition(view.getCenter().x - 165, view.getCenter().y - 200);//задаем позицию текста, отступая от центра камеры
-		window.draw(text1);//рисую этот текст
+		std::ostringstream playerScoreString;    // РѕР±СЉСЏРІРёР»Рё РїРµСЂРµРјРµРЅРЅСѓСЋ
+		playerScoreString << p.playerScore;		//Р·Р°РЅРµСЃР»Рё РІ РЅРµРµ С‡РёСЃР»Рѕ РѕС‡РєРѕРІ, С‚Рѕ РµСЃС‚СЊ С„РѕСЂРјРёСЂСѓРµРј СЃС‚СЂРѕРєСѓ
+		text1.setString("Score: " + playerScoreString.str());//Р·Р°РґР°РµРј СЃС‚СЂРѕРєСѓ С‚РµРєСЃС‚Сѓ Рё РІС‹Р·С‹РІР°РµРј СЃС„РѕСЂРјРёСЂРѕРІР°РЅРЅСѓСЋ РІС‹С€Рµ СЃС‚СЂРѕРєСѓ РјРµС‚РѕРґРѕРј .str() 
+		text1.setPosition(view.getCenter().x - 165, view.getCenter().y - 200);//Р·Р°РґР°РµРј РїРѕР·РёС†РёСЋ С‚РµРєСЃС‚Р°, РѕС‚СЃС‚СѓРїР°СЏ РѕС‚ С†РµРЅС‚СЂР° РєР°РјРµСЂС‹
+		window.draw(text1);//СЂРёСЃСѓСЋ СЌС‚РѕС‚ С‚РµРєСЃС‚
 
 		text2.setPosition(view.getCenter().x-125, view.getCenter().y-30);
 
-		std::ostringstream playerHealthString;    // объявили переменную
-		playerHealthString << p.health;		//занесли в нее число очков, то есть формируем строку
-		text4.setString("Health: " + playerHealthString.str());//задаем строку тексту и вызываем сформированную выше строку методом .str() 
-		text4.setPosition(view.getCenter().x - 165, view.getCenter().y - 180);//задаем позицию текста, отступая от центра камеры
-		window.draw(text4);//рисую этот текст
+		std::ostringstream playerHealthString;    // РѕР±СЉСЏРІРёР»Рё РїРµСЂРµРјРµРЅРЅСѓСЋ
+		playerHealthString << p.health;		//Р·Р°РЅРµСЃР»Рё РІ РЅРµРµ С‡РёСЃР»Рѕ РѕС‡РєРѕРІ, С‚Рѕ РµСЃС‚СЊ С„РѕСЂРјРёСЂСѓРµРј СЃС‚СЂРѕРєСѓ
+		text4.setString("Health: " + playerHealthString.str());//Р·Р°РґР°РµРј СЃС‚СЂРѕРєСѓ С‚РµРєСЃС‚Сѓ Рё РІС‹Р·С‹РІР°РµРј СЃС„РѕСЂРјРёСЂРѕРІР°РЅРЅСѓСЋ РІС‹С€Рµ СЃС‚СЂРѕРєСѓ РјРµС‚РѕРґРѕРј .str() 
+		text4.setPosition(view.getCenter().x - 165, view.getCenter().y - 180);//Р·Р°РґР°РµРј РїРѕР·РёС†РёСЋ С‚РµРєСЃС‚Р°, РѕС‚СЃС‚СѓРїР°СЏ РѕС‚ С†РµРЅС‚СЂР° РєР°РјРµСЂС‹
+		window.draw(text4);//СЂРёСЃСѓСЋ СЌС‚РѕС‚ С‚РµРєСЃС‚
 
 		text3.setString("Score:" + playerScoreString.str());
-		text3.setPosition(view.getCenter().x - 45, view.getCenter().y+ 20);//задаем позицию
+		text3.setPosition(view.getCenter().x - 45, view.getCenter().y+ 20);//Р·Р°РґР°РµРј РїРѕР·РёС†РёСЋ
 		
-		window.draw(p.sprite);//рисует игрока
+		window.draw(p.sprite);//СЂРёСЃСѓСЋ СЌС‚РѕС‚ С‚РµРєСЃС‚
 
-		if (p.life == false) {//если игрок съел 5 грибов на экран выводится Game Over		
-			window.draw(text2);// игра окончена
-			window.draw(text3);//итоговый счет
+		if (p.life == false) {//РµСЃР»Рё РёРіСЂРѕРє СЃСЉРµР» 5 РіСЂРёР±РѕРІ РЅР° СЌРєСЂР°РЅ РІС‹РІРѕРґРёС‚СЃСЏ Game Over		
+			window.draw(text2);// РёРіСЂР° РѕРєРѕРЅС‡РµРЅР°
+			window.draw(text3);//РёС‚РѕРіРѕРІС‹Р№ СЃС‡РµС‚
 		}
 		if (p.win == true)
 		{
-			window.draw(text2);// игра окончена
-			window.draw(text3);//итоговый счет
+			window.draw(text2);// РёРіСЂР° РѕРєРѕРЅС‡РµРЅР°
+			window.draw(text3);//РёС‚РѕРіРѕРІС‹Р№ СЃС‡РµС‚
 
 		}
 		window.display();
